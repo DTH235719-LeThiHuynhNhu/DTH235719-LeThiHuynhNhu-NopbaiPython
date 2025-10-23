@@ -1,0 +1,29 @@
+[
+    {
+        "MaLop": "CTK43",
+        "TenLop": "Công nghệ thông tin K43",
+        "DanhSachSV": [
+            {
+                "MaSV": "SV01",
+                "TenSV": "Nguyễn Văn A",
+                "NamSinh": 2003
+            },
+            {
+                "MaSV": "SV02",
+                "TenSV": "Trần Thị B",
+                "NamSinh": 2004
+            }
+        ]
+    },
+    {
+        "MaLop": "QTKD01",
+        "TenLop": "Quản trị kinh doanh 01",
+        "DanhSachSV": [
+            {
+                "MaSV": "SV03",
+                "TenSV": "Lê Văn C",
+                "NamSinh": 2002
+            }
+        ]
+    }
+]

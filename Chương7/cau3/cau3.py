@@ -1,34 +1,28 @@
 from xml.dom.minidom import parse
 import xml.dom.minidom
+import os
 
-# Mở và phân tích file XML
-try:
-    DOMTree = xml.dom.minidom.parse("employees.xml")
-except FileNotFoundError:
+# Tên file XML
+path = "employees.xml"
+
+# Kiểm tra file có tồn tại không
+if not os.path.exists(path):
     print("❌ Không tìm thấy file employees.xml — hãy chắc chắn file nằm cùng thư mục với chương trình.")
     exit()
 
-# Lấy phần tử gốc
+# Đọc file XML
+DOMTree = xml.dom.minidom.parse(path)
 collection = DOMTree.documentElement
 
-# Lấy tất cả các tag <employee>
+# Lấy tất cả thẻ <employee>
 employees = collection.getElementsByTagName("employee")
 
-# Duyệt vòng lặp để lấy dữ liệu
 print("Danh sách nhân viên:")
 for employee in employees:
-    # Kiểm tra tồn tại thẻ <id> và <name>
-    tag_id = employee.getElementsByTagName('id')
-    tag_name = employee.getElementsByTagName('name')
+    tag_id = employee.getElementsByTagName('id')[0]
+    id = tag_id.childNodes[0].data.strip()
 
-    if tag_id and tag_id[0].childNodes:
-        id = tag_id[0].childNodes[0].data.strip()
-    else:
-        id = "Không có ID"
-
-    if tag_name and tag_name[0].childNodes:
-        name = tag_name[0].childNodes[0].data.strip()
-    else:
-        name = "Không có tên"
+    tag_name = employee.getElementsByTagName('name')[0]
+    name = tag_name.childNodes[0].data.strip()
 
     print(id, '\t', name)
