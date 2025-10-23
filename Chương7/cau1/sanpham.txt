@@ -1,0 +1,6 @@
+SP01;Tivi Sony;10000;10
+SP02;Tu lanh Toshiba;8000;5
+SP01;Tivi Sony;10000;10
+SP02;Tu lanh Toshiba;8000;5
+SP01;Tivi Sony;10000;10
+SP02;Tu lanh Toshiba;8000;5
